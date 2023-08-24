@@ -27,15 +27,16 @@ public class KKMultiServerThread extends Thread {
                     socket.getInputStream()));
         ) {
             String inputLine, outputLine;
-            ChooseJokeProtocol protocol = new ChooseJokeProtocol();
+            JokeList protocol = new JokeList();
             outputLine = protocol.processInput(null);
             out.println(outputLine);
 
             while ((inputLine = in.readLine()) != null) {
                 outputLine = protocol.processInput(inputLine);
                 out.println(outputLine);
-                if (inputLine.equals("Explodir!"))
+                if (inputLine.equals("Explodir!")) {
                     System.exit(0);
+                }
                 if(outputLine.equals("Bye")) {
                 	break;
                 }
