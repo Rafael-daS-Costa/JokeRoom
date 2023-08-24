@@ -34,7 +34,7 @@ public class JokeList {
 			   "Sei lá, faz macarrão.",
 			   "Mas até agora não encontrei no catálogo da Netflix",
 			   "Paciente: Impossível! Meu marido não quer vir.",
-			   "Por isso muita gente parece brilhante até a ouvirmos falar"
+			   "Por isso muita gente parece brilhante até a ouvirmos falar."
 								};
     private String[] pontinho = {
 			   "O que é um pontinho vermelho na salada?",
@@ -44,9 +44,9 @@ public class JokeList {
 			};
     private String[] pontinhoResp = {
 			   "Uma ervilha prendendo a respiração.",
-			   "Um urublue",
-			   "Um Uno milho",
-			   "Um jacared"
+			   "Um urublue.",
+			   "Um Uno milho.",
+			   "Um jacared."
 			};
     private String[] adivinhas = {
 				"O que é pior que ser atingido por um raio?",
@@ -66,7 +66,7 @@ public class JokeList {
     	
     	if(state == CHOOSING) {
     		theOutput = "Qual o tipo de piada você deseja? \n" + 
-    				"[A]divinhas, [p]ontinho, [h]istorinha, ou [t]oc toc?";
+    					"[A]divinhas, [p]ontinho, [h]istorinha, ou [t]oc toc?";
     		state = SENTJOKE;
     	} else if(state == SENTJOKE) {
     		// checa se a escolha de piadas foi feita corretamente
@@ -97,9 +97,9 @@ public class JokeList {
         		}
     			
     		} else if(!theInput.equalsIgnoreCase("Explodir!")){
-    			theOutput = "Escolha inválida" +
-    					"Escolha um tipo de piada dentre as possíveis!" +
-    					"Qual o tipo de piada você deseja?" +
+    			theOutput = "Escolha inválida! " +
+    					"Escolha um tipo de piada dentre as possíveis!\n" +
+    					"Qual o tipo de piada você deseja?\n" +
     					"[A]divinhas, [p]ontinho, [h]istorinha, ou [t]oc toc?";
     		} else {
     			theOutput = "BOOOM!";
@@ -154,12 +154,12 @@ public class JokeList {
     						+ "Vai outra? (s/n)";
     				state = ANOTHER;
     			} else if(!theInput.equalsIgnoreCase("Explodir!")){
-    				theOutput = "Você deveria perguntar: Que" 
+    				theOutput = "Você deveria perguntar: Que " 
     						+ toctoc[currentJoke]
-    						+ "?"
-    						+ "Tenta de novo!"
+    						+ "?\n"
+    						+ "Tenta de novo! "
     						+ "Toc Toc!";
-    				state = SENTJOKE;
+    				state = TOCTOC;
     			} else {
         			theOutput = "BOOOM!";
         		}
